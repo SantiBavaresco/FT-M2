@@ -58,15 +58,15 @@ function buildToDo(todo, index) {
   // Tu código acá:
     //const toDoShell = document.createElement("span");
     const toDoShell = document.createElement("div");  // 1
-    toDoShell.className = "toDoShell";                  // 2
+    toDoShell.className = "toDoShell";                // 2
     const toDoText = document.createElement("span");  // 3
     toDoText.innerHTML = todo.description;            // 4
     toDoText.id = index;                              // 5 asignamos el id pasado por index
 
     if(todo.complete) toDoText.className = "completeText"; // 6
-        toDoShell.innerHTML=`<div class="toddy">.</div>`
+          toDoShell.innerHTML=`<div class="toddy">.</div>`
     toDoShell.appendChild(toDoText)
-        toDoText.addEventListener('click',completeToDo)
+          toDoText.addEventListener('click',completeToDo)
     return toDoShell;
 
 }
@@ -95,10 +95,11 @@ function buildToDos(toDos) {
 
 function displayToDos() {
   // Tu código acá:
-  const contenedor = document.getElementById('toDoContainer');
-  contenedor.innerHTML = "";
-  toDoItems.forEach(element => {
-    buildToDos(element);
+  const contenedor = document.getElementById('toDoContainer'); // 1
+  contenedor.innerHTML = "";                                   // 2
+
+  toDoItems.forEach(element => {                               // 4
+    buildToDos(element);                                       // 3
   });
     // el array del principio;
 }
@@ -130,8 +131,8 @@ function addToDo() {
 //   2) Agregarle un 'click' event listener, pasándole la función 'addToDo' como callback
 
 // Tu código acá:
-const ele = document.getElementById("addButton"); // 1
-ele.addEventListener("click", addToDo);
+const elemento = document.getElementById("addButton"); // 1
+elemento.addEventListener("click", addToDo);
 
 // La función completeToDo se va a ejecutar cuando queramos completar un todo
 // [NOTA: Algunas cuestiones a tener en cuenta
@@ -149,7 +150,9 @@ function completeToDo(event) {
   // DESCOMENTAR LA SIGUIENTE LINEA
   const index = event.target.id;
   // Tu código acá:
-  
+  toDoItems.completeToDo(index);
+  displayToDos();
+  ele.addEventListener("click", addToDo);
 
 }
 
