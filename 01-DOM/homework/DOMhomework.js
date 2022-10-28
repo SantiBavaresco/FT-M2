@@ -63,10 +63,11 @@ function buildToDo(todo, index) {
     toDoText.innerHTML = todo.description;            // 4
     toDoText.id = index;                              // 5 asignamos el id pasado por index
 
-    if(todo.complete) toDoText.className = "completeText"; // 6
-          toDoShell.innerHTML=`<div class="toddy">.</div>`
-    toDoShell.appendChild(toDoText)
-          toDoText.addEventListener('click',completeToDo)
+    toDoText.addEventListener('click',completeToDo);
+    if(todo.complete) toDoText.className = "completeText"; // 6 todo.complete && (toDoText.className = "completeText");
+          //toDoShell.innerHTML="<div class="toddy">.</div>"";
+    toDoShell.appendChild(toDoText);
+         
     return toDoShell;
 
 }
@@ -97,11 +98,18 @@ function displayToDos() {
   // Tu código acá:
   const contenedor = document.getElementById('toDoContainer'); // 1
   contenedor.innerHTML = "";                                   // 2
-
-  toDoItems.forEach(element => {                               // 4
-    buildToDos(element);                                       // 3
+  let resultado = buildToDos(toDoItems);
+  resultado.forEach(element => {                               // 4
+    contenedor.appendChild(element);
   });
     // el array del principio;
+  //const toDoContainer = document.getElementById("toDoContainer");
+  //toDoContainer.innerHTML = "";
+  // let resultado = buildToDos(toDoItems);
+  // resultado.forEach((element) => {
+  //   toDoContainer.appendChild(element);
+  // });
+  
 }
 
 
@@ -150,9 +158,12 @@ function completeToDo(event) {
   // DESCOMENTAR LA SIGUIENTE LINEA
   const index = event.target.id;
   // Tu código acá:
-  toDoItems.completeToDo(index);
+  toDoItems[index].completeToDo();
   displayToDos();
-  ele.addEventListener("click", addToDo);
+
+  // toDoItems.completeToDo(index);  // lo que hice yo
+  // displayToDos();
+  // ele.addEventListener("click", addToDo);
 
 }
 
