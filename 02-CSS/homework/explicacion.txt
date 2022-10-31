@@ -1,0 +1,7 @@
+Framework
+Preprocesador
+Responsive website
+
+Framework = es un conjunto de librerias que nos permiten automatizar y crear elementos html y estilos css de manera mas automatica y sensilla sin tener que recurrir a practicas tan crudas y abstractas.
+Preprocesador = como el less, nos permite crear subprocesos, variables, funciones pero para css, y automaticamente nos "compilara" el codigo en css.
+Responsive website = que una pagina se adapte a las dimensiones de la pantalla en la cual se este ejecutanco.
