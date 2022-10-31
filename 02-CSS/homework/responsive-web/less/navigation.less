@@ -1,15 +1,29 @@
 // Código de Nav acá
 nav {
-  color: #22283B;
-  background: #f4f4f4;
-  padding: 20px 0;
-  border: 1px double #e0e0e0;
-  border-radius: 10px;
+  /* esta definido en el archivo mixins
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  .h1{
-    background-color: red;
+  */
+  .flex(column);
+  background-color: @nav-bg;
+  border: @nav-border solid 2px;
+  padding-top: 13px;  
+
+  ul{
+    /* esta definido en el archivo mixins
+    display: flex;
+    //flex-direction: row;
+    justify-content: space-around; 
+    */
+    .flex(@justify: space-around);
+    width: 35%;
+    padding: 10px;
   }
-  
+  a{
+    text-decoration: none;
+    color: @nav-font;
+    font-weight: bold;
+   font-size: 15px;
   }
+}

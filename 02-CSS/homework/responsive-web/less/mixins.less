@@ -1,1 +1,26 @@
 // Mixins acá
+.flex(@direction: row, @justify: center, @aling: center){
+    display: flex;
+    flex-direction: @direction;
+    justify-content: @justify;
+    align-items: @aling;
+}
+
+.imgBorder(@radius: 20px){
+    border-radius: @radius;
+}
+
+.myBtn(@bg-color, @font-color){ //definimos los colores y estilos del boton que luego va a ser llamado y puedo reutilizar en otros btn.
+    background-color: @bg-color;
+    color: @font-color; 
+    display: inline-block;  
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+
+    &:hover{  //cuando ese elemento tenga un hover(pase por encima) hacer lo que esta dentro.
+        background-color: @font-color;
+        color: @bg-color;
+        
+    }
+}

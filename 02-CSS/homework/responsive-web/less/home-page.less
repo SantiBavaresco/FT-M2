@@ -11,7 +11,14 @@
     p {
       padding:0 15px;
     }
-
+    img{
+      //border-radius: 20px;
+      .imgBorder();
+      @media @phone {
+        width: 100%;
+      }
+    }
+    
   }
 
   .music-images {
@@ -57,7 +64,9 @@
         margin-bottom: 26px;
       }
 
-      .btn {
+      .btn{ // se aplica el mixins que creamos para el boton ("funcion").
+        .myBtn(@btn-bg-color, @wild-sand);
+
       }
     }
 
