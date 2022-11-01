@@ -14,6 +14,7 @@
     img{
       //border-radius: 20px;
       .imgBorder();
+//----------------media---------------------
       @media @phone {
         width: 100%;
       }
@@ -31,6 +32,17 @@
       margin: 20px 2.5%;
       border-radius: 20px;
       height: 100%;
+    }
+//----------------media---------------------
+    .tecnologia, .ondas{
+      @media @phone {
+        display: none;
+      }
+    }
+    .auricular{
+      @media @phone{
+        width: 100%;
+      }
     }
   }
 
@@ -52,10 +64,18 @@
     padding: 50px 60px;
     display: flex;
     justify-content: center;
+//----------------media---------------------
+    @media @phone{
+      .flex(column-reverse);
+      padding: 10px;
+    }
 
     .actual-text {
       width: 50%;
-
+//----------------media---------------------
+      @media @phone{
+        width: 90%;
+      }
       h3 {
         margin-bottom: 10px;
       }
@@ -66,14 +86,22 @@
 
       .btn{ // se aplica el mixins que creamos para el boton ("funcion").
         .myBtn(@btn-bg-color, @wild-sand);
-
+//----------------media---------------------
+        @media @phone{
+          width: 100%;
+          text-align: center;
+        }
       }
     }
 
     .actual-img {
       width: 46%;
       margin-left: 4%;
-
+//----------------media---------------------
+      @media @phone{
+        width: 100%;
+        padding: 10px;
+      }
       img {
         width: 100%;
         height: auto;

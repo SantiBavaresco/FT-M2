@@ -19,7 +19,11 @@ nav {
     .flex(@justify: space-around);
     width: 35%;
     padding: 10px;
+    @media @phone{
+      width: 99%;
+    }
   }
+  
   a{
     text-decoration: none;
     color: @nav-font;
