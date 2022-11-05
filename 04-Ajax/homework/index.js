@@ -1,6 +1,6 @@
 var MostrarListaActualizada= ()=>{
     var list =$("#lista");
-    list.empty();
+    list.empty(); // para evitar repeticiones de la lista
     $.get("http://localhost:5000/amigos", res => { // res es la respuesta del servidor(un obj)
         for (let i = 0; i < res.length; i++) {
             list.append(`<li> ${res[i].name} </li>`);
