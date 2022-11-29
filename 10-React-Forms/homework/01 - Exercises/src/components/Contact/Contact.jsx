@@ -74,19 +74,19 @@ export default function Contact () {
   return (
     <form onSubmit={handleSubmit}>
       <div>Crear Formulario
-        <label htmlFor="name">Nombre:
+        <label htmlFor="name">Nombre:</label>
           <input 
             key="name" 
             name="name" 
             value={inputs.name} 
-            onChange={handleChange}            
+            onChange={handleChange}
             placeholder="Escribe tu nombre..." 
             type="text"
             className={errors.name && "warning"} />
           <p className='danger'> {errors.name}</p>
-        </label>
+        
 
-        <label htmlFor="email">Correo Electrónico:
+        <label htmlFor="email">Correo Electrónico:</label>
           <input 
             key="email" 
             name="email" 
@@ -96,9 +96,9 @@ export default function Contact () {
             onChange={handleChange}
             className={errors.email && "warning"} />
           <p className='danger'> {errors.email}</p>
-        </label>
+       
 
-        <label htmlFor="phone">Teléfono:
+        <label htmlFor="phone">Teléfono:</label>
           <input 
             key="phone" 
             name="phone" 
@@ -108,9 +108,9 @@ export default function Contact () {
             onChange={handleChange}         
             className={errors.phone && "warning"}/>
           <p className='danger'> {errors.phone}</p>
-        </label>
+     
 
-        <label htmlFor="subject">Asunto:
+        <label htmlFor="subject">Asunto:</label>
           <input 
             key="subject" 
             name="subject" 
@@ -120,9 +120,9 @@ export default function Contact () {
             onChange={handleChange}            
             className={errors.subject && "warning"}/>
           <p className='danger'> {errors.subject}</p>
-        </label>
 
-        <label htmlFor="message">Mensaje:
+
+        <label htmlFor="message">Mensaje:</label>
           <textarea 
             key="message" 
             name="message" 
@@ -132,7 +132,7 @@ export default function Contact () {
             onChange={handleChange}
             className={errors.message && "warning"}/>
           <p className='danger'> {errors.message}</p>
-        </label>
+        
 
         <button type="submit" >Enviar</button>
       </div>
