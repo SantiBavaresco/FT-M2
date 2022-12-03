@@ -37,7 +37,7 @@ const store = createStore(rootReducer);
 
 // SUBSCRIBE
 // Cada vez que ocurra una actualizacion de ese estado, se ejecuta esa funcion.
-// y le llega a los elementos subscritos al store el stado actualizado.
+// y le llega a los elementos subscritos 2"al store el stado actualizado.
 store.subscribe(() => {
   console.log('Subscription: ', store.getState());
 });
